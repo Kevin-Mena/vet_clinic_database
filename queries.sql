@@ -34,3 +34,9 @@ BEGIN;
 UPDATE animals 
 SET species = 'digimon'
 WHERE name like '%mon';
+
+-- Update the animals table by setting the species column to pokemon for all animals that don't have species already set and commit the changes
+UPDATE animals 
+SET species = 'pokemon'
+WHERE species IS NULL;
+COMMIT;
