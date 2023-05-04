@@ -69,3 +69,29 @@ WHERE weight_kg < 0;
 
 -- Commit transaction.
 COMMIT;
+
+-- How many animals are there?
+SELECT COUNT(id) FROM animals;
+
+-- How many animals have never tried to escape?
+SELECT COUNT(id) FROM animals WHERE escape_attempts = 0 ;
+
+-- What is the average weight of animals?
+SELECT AVG(weight_kg) FROM animals;
+
+-- Who escapes the most, neutered or not neutered animals?
+SELECT name, MAX(escape_attempts), neutered FROM animals GROUP BY name, neutered;
+
+-- What is the minimum and maximum weight of each type of animal?
+SELECT species, MAX(weight_kg), MIN(weight_kg) FROM animals GROUP BY species;
+
+-- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
+SELECT species,
+ AVG(escape_attempts),
+  date_of_birth
+   FROM
+    animals
+    GROUP BY species, date_of_birth
+     HAVING 
+      date_of_birth 
+      BETWEEN  '1990-01-01' AND '2000-12-31';
