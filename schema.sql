@@ -54,3 +54,14 @@ age INT,
 date_of_graduation  DATE,
 PRIMARY KEY(id)
   );
+
+-- Create a "join table" called specializations
+CREATE TABLE specializations (
+species_id int,
+vets_id int
+);
+
+-- Add primary key to specializations and reference foreign keys
+ALTER TABLE specializations ADD PRIMARY KEY (species_id, vets_id);
+ALTER TABLE specializations ADD CONSTRAINT fk_species FOREIGN KEY (species_id) REFERENCES species (id);
+ALTER TABLE specializations ADD CONSTRAINT fk_vets FOREIGN KEY (vets_id) REFERENCES vets (id);
