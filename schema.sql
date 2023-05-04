@@ -45,3 +45,36 @@ ADD CONSTRAINT fk_owners
 FOREIGN KEY (owner_id)
 REFERENCES owners (id)
 ON DELETE SET NULL;
+
+-- Create a table named vets
+CREATE TABLE vets (
+id INT GENERATED ALWAYS AS IDENTITY,
+name VARCHAR(100),
+age INT,
+date_of_graduation  DATE,
+PRIMARY KEY(id)
+  );
+
+-- Create a "join table" called specializations
+CREATE TABLE specializations (
+species_id INT,
+vets_id INT
+);
+
+-- Add primary key to specializations and reference foreign keys
+ALTER TABLE specializations ADD PRIMARY KEY (species_id, vets_id);
+ALTER TABLE specializations ADD CONSTRAINT fk_species FOREIGN KEY (species_id) REFERENCES species (id);
+ALTER TABLE specializations ADD CONSTRAINT fk_vets FOREIGN KEY (vets_id) REFERENCES vets (id);
+
+-- Create a "join table" called visits
+ CREATE TABLE visits (
+animals_id INT,
+vets_id INT,
+date_of_visit DATE
+ );
+
+-- Add primary key to visits and reference foreign keys
+ALTER TABLE visits ADD PRIMARY KEY (animals_id, vets_id, date_of_visit);
+ALTER TABLE visits ADD CONSTRAINT fk_animals FOREIGN KEY (animals_id) REFERENCES animals (id);
+ALTER TABLE visits ADD CONSTRAINT fk_vets FOREIGN KEY (vets_id) REFERENCES vets (id);
+
