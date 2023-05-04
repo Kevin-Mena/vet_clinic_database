@@ -50,7 +50,7 @@ WHERE animals.name='Agumon' AND owners.full_name='Sam Smith';
 -- Jennifer Orwell owns Gabumon and Pikachu.
 UPDATE animals SET owner_id = owners.id 
 FROM owners 
-WHERE (animals.name='Gabumon' OR animals.name='Pikachu') AND (owners.full_name='Jennifer ORwell');
+WHERE (animals.name='Gabumon' OR animals.name='Pikachu') AND (owners.full_name='Jennifer Orwell');
 
 -- Bob owns Devimon and Plantmon.
 UPDATE animals SET owner_id = owners.id 
