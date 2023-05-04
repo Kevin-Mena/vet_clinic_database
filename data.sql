@@ -19,8 +19,8 @@ values ('Squirtle','1993-04-02',3,FALSE,-12.13);
 INSERT INTO animals (name,date_of_birth,escape_attempts,neutered,weight_kg)
 values ('Angemon','2005-06-12',1,TRUE,-45.00);
 INSERT INTO animals (name,date_of_birth,escape_attempts,neutered,weight_kg)
-values ('Boarmon','2005-06-07',7,TRUE,24.40);
+values ('Boarmon','2005-06-07',7,TRUE,20.40);
 INSERT INTO animals (name,date_of_birth,escape_attempts,neutered,weight_kg)
 values ('Blossom','1998-10-13',3,TRUE,17.00);
  INSERT INTO animals (name,date_of_birth,escape_attempts,neutered,weight_kg)
-values ('Ditto','2022-05-14',4,TRUE,17.00);
+values ('Ditto','2022-05-14',4,TRUE,22.00);
