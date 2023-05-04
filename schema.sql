@@ -38,3 +38,10 @@ FOREIGN KEY (species_id)
 REFERENCES species (id)
 ON DELETE SET NULL;
 
+-- Add column owner_id which is a foreign key referencing the owners table
+ALTER TABLE animals ADD owner_id INT;
+ALTER TABLE animals
+ADD CONSTRAINT fk_owners
+FOREIGN KEY (owner_id)
+REFERENCES owners (id)
+ON DELETE SET NULL;
