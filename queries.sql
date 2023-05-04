@@ -40,3 +40,8 @@ UPDATE animals
 SET species = 'pokemon'
 WHERE species IS NULL;
 COMMIT;
+
+-- Delete all records from animals table and roll back the changes
+BEGIN;
+DELETE FROM animals;
+ROLLBACK;
