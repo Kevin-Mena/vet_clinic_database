@@ -74,7 +74,10 @@ date_of_visit DATE
  );
 
 -- Add primary key to visits and reference foreign keys
+
 ALTER TABLE visits ADD PRIMARY KEY (animals_id, vets_id, date_of_visit);
 ALTER TABLE visits ADD CONSTRAINT fk_animals FOREIGN KEY (animals_id) REFERENCES animals (id);
 ALTER TABLE visits ADD CONSTRAINT fk_vets FOREIGN KEY (vets_id) REFERENCES vets (id);
 
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
