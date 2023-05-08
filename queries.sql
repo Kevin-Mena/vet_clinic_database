@@ -18,7 +18,7 @@ SELECT name, escape_attempts from animals WHERE weight_kg > 10.5;
 SELECT * from animals WHERE neutered = 'TRUE';
 
 /*Find all animals not named Gabumon*/
-SELECT * from animals WHERE name != 'Gabumon';
+SELECT * from animals WHERE name <> 'Gabumon';
 
 /*Find all animals with a weight between 10.4kg and 17.3kg (including the animals with the weights that equals precisely 10.4kg or 17.3kg)*/
 SELECT * from animals WHERE weight_kg >= 10.5 AND weight_kg <= 17.3;
@@ -205,7 +205,7 @@ ORDER BY date_of_visit LIMIT 1;
 SELECT COUNT(*) from visits 
 JOIN animals ON animals.id = animals_id
 JOIN specializations ON specializations.vets_id = visits.vets_id
-AND specializations.species_id != animals.species_id;
+AND specializations.species_id <> animals.species_id;
 
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most.
 SELECT species.name, COUNT(*) FROM species
